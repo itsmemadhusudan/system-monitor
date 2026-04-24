@@ -6,19 +6,24 @@ release/
 dist/
 out/
 *.asar
+builder-effective-config.yaml
+builder-debug.yml
 
 # Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+lerna-debug.log*
+*.log
 
 # OS
 .DS_Store
 Thumbs.db
 Desktop.ini
+$RECYCLE.BIN/
 
-# Env
+# Env & secrets
 .env
 .env.*
 !.env.example
@@ -27,6 +32,24 @@ Desktop.ini
 coverage/
 .nyc_output/
 
+# IDE & editors
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# VS Code (remove this line if your team commits shared workspace settings)
+.vscode/
+
+# TypeScript / tooling caches
+.cache/
+.turbo/
+*.tsbuildinfo
+
 # Misc
 *.tgz
-.cache/
+tmp/
+temp/
