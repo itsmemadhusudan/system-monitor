@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desktop Widget</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 10px;
+        color: #fff;
+        font-family: "Segoe UI", sans-serif;
+        background: rgba(15, 15, 15, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 12px;
+        backdrop-filter: blur(6px);
+        -webkit-user-select: none;
+        user-select: none;
+      }
+
+      h3 {
+        margin: 0 0 8px;
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 3px 0;
+        font-size: 13px;
+      }
+
+      .label {
+        color: #cfd3dc;
+      }
+
+      .value {
+        color: #ffffff;
+        font-weight: 600;
+      }
+
+      .row.block {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+      }
+
+      .value.multiline {
+        font-weight: 500;
+        font-size: 11px;
+        line-height: 1.35;
+        text-align: left;
+        white-space: pre-wrap;
+        word-break: break-word;
+        max-height: 120px;
+        overflow-y: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>System Monitor</h3>
+    <div class="row"><span class="label">CPU</span><span id="cpu" class="value">--</span></div>
+    <div class="row"><span class="label">Thermal</span><span id="thermal" class="value multiline">--</span></div>
+    <div class="row"><span class="label">GPU</span><span id="gpu" class="value multiline">--</span></div>
+    <div class="row"><span class="label">RAM</span><span id="ram" class="value">--</span></div>
+    <div class="row"><span class="label">Battery</span><span id="battery" class="value">--</span></div>
+    <div class="row"><span class="label">Network</span><span id="network" class="value">--</span></div>
+    <div class="row block">
+      <span class="label">Storage</span><span id="storage" class="value multiline">--</span>
+    </div>
+
+    <script src="renderer.js"></script>
+  </body>
+</html>

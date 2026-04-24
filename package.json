@@ -1,0 +1,52 @@
+{
+  "name": "desktop-widget",
+  "version": "1.0.0",
+  "description": "Desktop system monitor widget built with Electron",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "start:bg": "electron . --silent",
+    "electron-path": "node -p \"require('electron')\"",
+    "dist": "electron-builder --win --x64",
+    "dist:dir": "electron-builder --win --x64 --dir"
+  },
+  "keywords": [
+    "electron",
+    "widget",
+    "system-monitor"
+  ],
+  "author": "Local",
+  "license": "ISC",
+  "dependencies": {
+    "systeminformation": "^5.31.5"
+  },
+  "devDependencies": {
+    "electron": "^41.3.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.desktopwidget.systemmonitor",
+    "productName": "SystemMonitorWidget",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "**/*",
+      "!release/**"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "signAndEditExecutable": false
+    },
+    "portable": {
+      "artifactName": "${productName}-${version}-portable.exe"
+    }
+  }
+}
